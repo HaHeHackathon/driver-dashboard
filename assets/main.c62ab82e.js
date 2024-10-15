@@ -1,4 +1,4 @@
-const w={seats:36,wheelchair:2,standing:64};function _(t){const[e,s]=t.split(":").map(Number),n=new Date;return n.setHours(e,s,0,0),n.getTime()}function E(t){const e=new Date(t),s=e.getHours().toString().padStart(2,"0"),n=e.getMinutes().toString().padStart(2,"0");return`${s}:${n}`}function C(t,e){const n=_(t)+e*6e4;return E(n)}const I="https://bahn-test-3687838850c6.herokuapp.com/";let f=document.getElementById("status");const r=t=>{f&&(f.setAttribute("data-status",t),f.innerHTML=t)},L=t=>{let e;try{e=JSON.parse(t);const s=document.querySelector("#result"),n=document.querySelector("#line");if(s&&e&&n){n.innerHTML=`
+const w={seats:36,wheelchair:2,standing:64};function _(t){const e=t.match(/\d*\:\d/);if(console.log("isSimple"),console.log(e),e){const[s,d]=t.split(":").map(Number),c=new Date;return c.setHours(s,d,0,0),c.getTime()}else return new Date(t).getTime()}function E(t){const e=new Date(t),s=e.getHours().toString().padStart(2,"0"),d=e.getMinutes().toString().padStart(2,"0");return`${s}:${d}`}function C(t,e){const d=_(t)+e*6e4;return E(d)}const I="https://bahn-test-3687838850c6.herokuapp.com/";let m=document.getElementById("status");const u=t=>{m&&(m.setAttribute("data-status",t),m.innerHTML=t)},L=t=>{let e;try{e=JSON.parse(t);const s=document.querySelector("#result"),d=document.querySelector("#line");if(s&&e&&d){d.innerHTML=`
                 <div class="d-inline-block">
                     <div class="hex-badge">
                         <span class="badge-number">${e.busLine}</span>
@@ -8,51 +8,51 @@ const w={seats:36,wheelchair:2,standing:64};function _(t){const[e,s]=t.split(":"
                  - ${e.route}
                 </div>
                 
-                `;let v="",a=0;for(const d of e.stations){let i="full",h=0,b=0;for(const g in w)b+=w[g];console.log(b);for(const g in d.checkedPassengers)h+=d.checkedPassengers[g];const l=h/b*100;console.log("percentage"),console.log(l),l>90?a+=3:l>70?a+=2:l>50&&(a+=1),d.checkedPassengers.wheelchair>0&&(a+=2),l>=99?i="full":l>=75?i="high":l>=50?i="medium":l>=20?i="low":i="none",console.log(h);let o="";switch(i){case"low":o=`
+                `;let c="",l=0;for(const n of e.stations){let o="full",p=0,b=0;for(const f in w)b+=w[f];console.log(b);for(const f in n.checkedPassengers)p+=n.checkedPassengers[f];const a=p/b*100;console.log("percentage"),console.log(a),a>90?l+=3:a>70?l+=2:a>50&&(l+=1),n.checkedPassengers.wheelchair>0&&(l+=2),a>=99?o="full":a>=75?o="high":a>=50?o="medium":a>=20?o="low":o="none",console.log(p);let i="";switch(o){case"low":i=`
                             <td class="low">&nbsp;</td>
                             <td class="low">&nbsp;</td>
                             <td class="none">&nbsp;</td>
                             <td class="none">&nbsp;</td>
                             <td class="none">&nbsp;</td>
-                            `;break;case"medium":o=`
+                            `;break;case"medium":i=`
                             <td class="medium">&nbsp;</td>
                             <td class="medium">&nbsp;</td>
                             <td class="medium">&nbsp;</td>
                             <td class="none">&nbsp;</td>
                             <td class="none">&nbsp;</td>
-                            `;break;case"high":o=`
+                            `;break;case"high":i=`
                             <td class="high">&nbsp;</td>
                             <td class="high">&nbsp;</td>
                             <td class="high">&nbsp;</td>
                             <td class="high">&nbsp;</td>
                             <td class="none">&nbsp;</td>
-                            `;break;case"full":o=`
+                            `;break;case"full":i=`
                             <td class="full">&nbsp;</td>
                             <td class="full">&nbsp;</td>
                             <td class="full">&nbsp;</td>
                             <td class="full">&nbsp;</td>
                             <td class="full">&nbsp;</td>
-                            `;break;default:o=`
+                            `;break;default:i=`
                             <td class="none">&nbsp;</td>
                             <td class="none">&nbsp;</td>
                             <td class="none">&nbsp;</td>
                             <td class="none">&nbsp;</td>
                             <td class="none">&nbsp;</td>
-                            `}let p="";a>0?p=`<span class="red">+ ${a}</span>`:p=`<span class="green">- ${a}</span>`,v+=`<tr>
+                            `}let g="";l>0?g=`<span class="red">+ ${l}</span>`:g=`<span class="green">- ${l}</span>`,c+=`<tr>
                     <td>
-                        <img class="center" src="${c}/assets/haltestelle.svg" alt="haltestelle" width="20" height="20">
+                        <img class="center" src="${r}/assets/haltestelle.svg" alt="haltestelle" width="20" height="20">
                     </td>
-                    <td>${d.estimatedArrival}</td>
-                    <td>${C(d.estimatedArrival,a)} ${p}</td>
-                    <td>${d.stationName}</td>
+                    <td>${n.estimatedArrival}</td>
+                    <td>${C(n.estimatedArrival,l)} ${g}</td>
+                    <td>${n.stationName}</td>
                     <td>
-                        <img src="${c}/assets/elderly.svg" alt="elderly" width="20" height="20">
-                        ${d.checkedPassengers.elderly}
-                        <img src="${c}/assets/people.svg" alt="people" width="20" height="20">
-                        ${d.checkedPassengers.normal}
-                        <img src="${c}/assets/wheelchair.svg" alt="wheelchair" width="20" height="20">
+                        <img src="${r}/assets/elderly.svg" alt="elderly" width="20" height="20">
+                        ${n.checkedPassengers.elderly}
+                        <img src="${r}/assets/people.svg" alt="people" width="20" height="20">
+                        ${n.checkedPassengers.normal}
+                        <img src="${r}/assets/wheelchair.svg" alt="wheelchair" width="20" height="20">
                         <i class="bi bi-person-wheelchair"></i>
-                        ${d.checkedPassengers.wheelchair}
+                        ${n.checkedPassengers.wheelchair}
                     </td>
                     <td>
                             <div class="activity__table">
@@ -77,7 +77,7 @@ const w={seats:36,wheelchair:2,standing:64};function _(t){const[e,s]=t.split(":"
                                         <tr>
                                             
                                             
-                                            ${o}
+                                            ${i}
                                             
                                             
                                         </tr>
@@ -93,9 +93,9 @@ const w={seats:36,wheelchair:2,standing:64};function _(t){const[e,s]=t.split(":"
                     </tr>`}console.log(e),s.innerHTML=`
                 <table class="table table--timetablXe table-striped">
                 <tbody>
-                ${v}
+                ${c}
                 </tbody>
                 </tabl>
                 
-                `,r("ok")}}catch(s){r("error"),console.error("Error:",s)}},c="/driver-dashboard";let m,u=5,$=0;function T(){const t=document.getElementById("counter");t&&(t.textContent=`Next update in: ${u} seconds | ${$}`)}function y(){console.log("Fetching data..."),$++,fetch(I).then(t=>t.json()).then(t=>{L(JSON.stringify(t)),S()}).catch(t=>{console.error("Error fetching data:",t),r("error")})}function P(){console.log("start countdown"),y(),m=setInterval(()=>{u--,T(),u<=0&&y()},1e3)}function S(){u=5,T()}function k(){m!==void 0&&clearInterval(m),console.log("Stopped fetching and countdown.")}function x(){S(),P()}r("loading");window.addEventListener("load",x);window.addEventListener("beforeunload",k);document.addEventListener("visibilitychange",()=>{document.visibilityState==="hidden"?k():document.visibilityState==="visible"&&x()});
-//# sourceMappingURL=main.f625f9ae.js.map
+                `,u("ok")}}catch(s){u("error"),console.error("Error:",s)}},r="/driver-dashboard";let v,h=5,$=0;function S(){const t=document.getElementById("counter");t&&(t.textContent=`Next update in: ${h} seconds | ${$}`)}function y(){console.log("Fetching data..."),$++,fetch(I).then(t=>t.json()).then(t=>{L(JSON.stringify(t)),T()}).catch(t=>{console.error("Error fetching data:",t),u("error")})}function P(){console.log("start countdown"),y(),v=setInterval(()=>{h--,S(),h<=0&&y()},1e3)}function T(){h=5,S()}function k(){v!==void 0&&clearInterval(v),console.log("Stopped fetching and countdown.")}function x(){T(),P()}u("loading");window.addEventListener("load",x);window.addEventListener("beforeunload",k);document.addEventListener("visibilitychange",()=>{document.visibilityState==="hidden"?k():document.visibilityState==="visible"&&x()});
+//# sourceMappingURL=main.c62ab82e.js.map
