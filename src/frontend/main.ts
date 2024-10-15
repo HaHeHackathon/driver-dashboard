@@ -11,6 +11,24 @@ const BUS_CAPACITY: {[key: string]: number} = {
 
 function timeStringToUnix(time: string): number {
     // Split the "12:25" string into hours and minutes
+    const isSimple = time.match(/\d*\:\d/);
+console.log('isSimple');
+console.log(isSimple);
+    if(isSimple ){
+        const [hours, minutes] = time.split(":").map(Number);
+        // Get the current date and set the hours and minutes
+        const now = new Date();
+        now.setHours(hours, minutes, 0, 0); // Set hours, minutes, seconds, and milliseconds
+
+        // Return the Unix time in milliseconds
+        return now.getTime();
+    } else {
+        // convert datetime string to number
+        const date = new Date(time);
+
+        // Convert to Unix timestamp (in milliseconds)
+        return date.getTime();
+    }
     const [hours, minutes] = time.split(":").map(Number);
 
     // Get the current date and set the hours and minutes
