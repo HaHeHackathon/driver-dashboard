@@ -4,7 +4,7 @@ const RELATIVE_BASE = './..';
 const INPUT_CONTENT = `${BASE}/frontend/pages`;
 const OUTPUT_DIR = "_site";
 const CLIENT_DIR = `${BASE}/frontend`;
-const PATH_PREFIX =  process.env.NODE_ENV === 'production' ? '/maintenance/' : '/';
+const PATH_PREFIX =  process.env.NODE_ENV === 'production' ? '/driver-dashboard/' : '/';
 // const DIST_DIR = '_site';
 // const MANIFEST = 'manifest.json';
 const TEMPLATES = `${RELATIVE_BASE}/templates`;

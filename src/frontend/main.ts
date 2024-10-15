@@ -2,8 +2,8 @@
 import './_framework/css/index.css';
 // import { createSearch } from './components/molecules/search/search.molecule';
 
-
 const url = `https://bahn-test-3687838850c6.herokuapp.com/`;
+const prefix = process.env.NODE_ENV === 'production' ? '/driver-dashboard' : '';
 
 const options = {
 //   method: 'GET',
@@ -37,17 +37,17 @@ fetch(url, options)
                 for(const item of json.stations) {
                     rows += `<tr>
                     <td>
-                        <img class="center" src="/assets/haltestelle.svg" alt="haltestelle" width="20" height="20">
+                        <img class="center" src="${prefix}/assets/haltestelle.svg" alt="haltestelle" width="20" height="20">
                         </td>
                     <td>${item.estimatedArrival}</td>
                     <td>${item.stationName}</td>
                     <td>
                     
-                    <img src="/assets/elderly.svg" alt="elderly" width="20" height="20">
+                    <img src="${prefix}/assets/elderly.svg" alt="elderly" width="20" height="20">
                     ${item.checkedPassengers.elderly}
-                    <img src="/assets/people.svg" alt="people" width="20" height="20">
+                    <img src="${prefix}/assets/people.svg" alt="people" width="20" height="20">
                     ${item.checkedPassengers.normal}
-                    <img src="/assets/wheelchair.svg" alt="wheelchair" width="20" height="20">
+                    <img src="/assets/${prefix}/assets/wheelchair.svg" alt="wheelchair" width="20" height="20">
                     <i class="bi bi-person-wheelchair"></i>
                     ${item.checkedPassengers.wheelchair}
                     </td>
