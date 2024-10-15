@@ -1,31 +1,35 @@
-.activity thead tr td{
+.activity__stream thead tr td{
     font-size: 6px;
     font-weight: bold;
     color: white;
 }
-.activity tbody tr td{
-    width: 10px;
-    height: 10px;
+.activity__stream tbody tr td{
+    width: 30px;
+    height: 30px;
     background-color: rgb(55, 54, 54);
     border: 1px solid black;
+    text-align: center;
 }
-.activity tbody tr td.high{
-    background-color: lime
+.activity__stream tbody tr td.high{
+    background-color: orange;
 }
-.activity tbody tr td.medium{
-    background-color: green
+.activity__stream tbody tr td.full{
+    background-color: red;
 }
-.activity tbody tr td.low{
+.activity__stream tbody tr td.medium{
+    background-color: rgb(212, 222, 25)
+}
+.activity__stream tbody tr td.low{
     background-color: darkgreen
 }
-/* .activity tbody tr td.none{
+/* .activity__stream tbody tr td.none{
     background-color: black;
 } */
 .activity__table{
     height: 30px;
     background-color: black;
     padding: 2px;
-    width: 250px;
+    width: 150px;
 }
 
 .fixed-height-table {

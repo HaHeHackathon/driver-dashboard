@@ -52,7 +52,9 @@ body{
     object-fit: cover; /* Prevent distortion */
   }
 
-
+  img.primary {
+    fill: #1b3156;
+  }
 .table--timetable td{
     background-color: transparent;
     color: white;
@@ -70,3 +72,33 @@ body{
     margin-right: auto;
     width: 50%;
   } */
+
+  .hex-badge {
+    width: 100px;
+    height: 60px;
+    background-color: #d32f2f; /* Red color similar to the image */
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.badge-number {
+    position: relative;
+}
+.status{
+    padding: 2px 5px;
+}
+[data-status="ok"]{
+    background-color: green;
+}
+[data-status="loading"]{
+    background-color: gray;
+}
+[data-status="error"]{
+    background-color: red;
+}
