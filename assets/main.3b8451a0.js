@@ -10,7 +10,7 @@ const c="https://bahn-test-3687838850c6.herokuapp.com/",l="/driver-dashboard",i=
                     ${s.checkedPassengers.elderly}
                     <img src="${l}/assets/people.svg" alt="people" width="20" height="20">
                     ${s.checkedPassengers.normal}
-                    <img src="/assets/${l}/assets/wheelchair.svg" alt="wheelchair" width="20" height="20">
+                    <img src="${l}/assets/wheelchair.svg" alt="wheelchair" width="20" height="20">
                     <i class="bi bi-person-wheelchair"></i>
                     ${s.checkedPassengers.wheelchair}
                     </td>
@@ -22,4 +22,4 @@ const c="https://bahn-test-3687838850c6.herokuapp.com/",l="/driver-dashboard",i=
                 </tabl>
                 
                 `}}catch(r){console.error("Error:",r)}}).catch(e=>{console.error("Error:",e)});
-//# sourceMappingURL=main.80a018fb.js.map
+//# sourceMappingURL=main.3b8451a0.js.map
