@@ -102,3 +102,11 @@ body{
 [data-status="error"]{
     background-color: red;
 }
+
+.red{
+    color: red;
+    font-weight: bold;
+}
+.green {
+    color: green;
+}
