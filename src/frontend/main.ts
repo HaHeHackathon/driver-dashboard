@@ -47,7 +47,7 @@ fetch(url, options)
                     ${item.checkedPassengers.elderly}
                     <img src="${prefix}/assets/people.svg" alt="people" width="20" height="20">
                     ${item.checkedPassengers.normal}
-                    <img src="/assets/${prefix}/assets/wheelchair.svg" alt="wheelchair" width="20" height="20">
+                    <img src="${prefix}/assets/wheelchair.svg" alt="wheelchair" width="20" height="20">
                     <i class="bi bi-person-wheelchair"></i>
                     ${item.checkedPassengers.wheelchair}
                     </td>
