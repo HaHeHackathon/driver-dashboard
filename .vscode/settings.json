@@ -1,0 +1,17 @@
+{
+    "material-icon-theme.folders.associations": {
+        "image": "../../../../icons/folder-atom",
+        "link": "../../../../icons/folder-atom",
+        "button_link": "../../../../icons/folder-molecule",
+        "chip": "../../../../icons/folder-molecule",
+        "profile": "../../../../icons/folder-molecule",
+        "search": "../../../../icons/folder-molecule",
+        "footer": "../../../../icons/folder-organism",
+        "header": "../../../../icons/folder-organism",
+        "list": "../../../../icons/folder-organism",
+        "main": "../../../../icons/folder-organism",
+        "navigation": "../../../../icons/folder-organism",
+        "macros": "../../../../icons/folder-template",
+        "_setup": "../../../../icons/folder-template"
+    }
+}

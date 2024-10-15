@@ -1,0 +1,72 @@
+
+@import './components/_fonts.css';
+/* @import './../../components/molecules/search/search.molecule.css';
+@import './../../components/molecules/chip/chip.molecule.css'; */
+@import './components/_levels.css';
+@import './components/_activity.css';
+
+.hidden {
+    display: none;
+}
+
+body{
+    background-color: #1b3156;
+    color: white;
+    font-family:monospace;
+}
+
+.bg-danger >  td {
+    background-color: #ff0000;
+}
+.bg-warning > td {
+    background-color: #ffcc00;
+}
+.bg-success > td {
+    background-color: #00ff00;
+}   
+
+.navbar--bottom{
+    background-color: #259bd7;
+    color: white;
+}
+.navbar--bottom .active{
+    background-color: #0576bb;
+}
+.navbar--bottom a {
+    color: white;
+}
+.navbar--bottom .navbar__item{
+    text-align: center;
+
+}
+.logo-container {
+    width: 40px; /* Set the width of the visible part */
+    height: 40px; /* Set the height */
+    overflow: hidden; /* Hide anything that exceeds the container */
+  }
+  
+  .logo-img {
+    width: auto; /* Allow the logo to keep its original aspect ratio */
+    height: 100%; /* Ensure the height fits the container */
+    object-position: left; /* Show the left side of the image */
+    object-fit: cover; /* Prevent distortion */
+  }
+
+
+.table--timetable td{
+    background-color: transparent;
+    color: white;
+    border-bottom: none;
+    padding: 0;
+    line-height: 50px;
+}
+/* .timetable__container{
+    width: 35px;
+    height: 100%;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  } */
